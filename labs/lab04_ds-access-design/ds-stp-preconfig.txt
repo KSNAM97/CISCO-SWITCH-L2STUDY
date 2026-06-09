@@ -1,0 +1,17 @@
+	#DS-SW1
+en
+conf t
+!
+spanning-tree vlan 1 priority 0
+!
+end
+!
+
+	#DS-SW2
+en
+conf t
+!
+spanning-tree vlan 1 priority 4096
+!
+end
+!
