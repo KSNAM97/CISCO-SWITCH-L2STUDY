@@ -37,14 +37,14 @@ VLAN은 **12bit**로 구성 (0 ~ 4095)
 
 ### Default VLAN 확인
 
-Copy
+ 
 SW# show vlan brief
 
 VLAN Name Status Ports
 
 1 default active Et0/0, Et0/1, Et0/2, Et0/3 Et1/0, Et1/1, Et1/2, Et1/3 ... 1002 fddi-default act/unsup 1003 token-ring-default act/unsup 1004 fddinet-default act/unsup 1005 trnet-default act/unsup
 
-Copy
+ 
 ---
 
 ## 3. VLAN 생성 / 삭제
@@ -53,32 +53,32 @@ Copy
 
 en conf t ! vlan 10 ! end
 
-Copy
+ 
 확인:
 SW# show vlan brief ... 10 VLAN0010 active
 
-Copy
+ 
 ### EX2) VLAN 10, 20, 30 동시 생성
 
 en conf t ! vlan 10,20,30 ! end
 
-Copy
+ 
 ### EX3) VLAN 10, 20, 30 삭제
 
 en conf t ! no vlan 10,20,30 ! end
 
-Copy
+ 
 ### EX4) VLAN Name 지정
 
 en conf t ! vlan 11-15 ! vlan 11 name CCNA ! vlan 12 name CCNP ! vlan 13 name LINUX-SERVER ! vlan 14 name MS-SERVER ! vlan 15 name AWS ! end
 
-Copy
+ 
 확인:
 SW# show vlan brief VLAN Name Status Ports
 
 11 CCNA active 12 CCNP active 13 LINUX-SERVER active 14 MS-SERVER active 15 AWS active
 
-Copy
+ 
 ---
 
 ## 4. `Range` Command
@@ -93,13 +93,13 @@ Copy
 
 SW(config)# vlan 10 SW(config)# vlan 20 ! SW(config)# interface range fa0/1 - 5 SW(config-if)# switchport mode access SW(config-if)# switchport access vlan 10 ! SW(config)# interface range fa0/6 - 10 SW(config-if)# switchport mode access SW(config-if)# switchport access vlan 20
 
-Copy
+ 
 확인:
 SW# show vlan brief VLAN Name Status Ports
 
 1 default active Fa0/11, Fa0/12, ... , Fa0/24 10 VLAN0010 active Fa0/1, Fa0/2, Fa0/3, Fa0/4, Fa0/5 20 VLAN0020 active Fa0/6, Fa0/7, Fa0/8, Fa0/9, Fa0/10
 
-Copy
+ 
 ---
 
 ## 5. 핵심 명령어 정리
