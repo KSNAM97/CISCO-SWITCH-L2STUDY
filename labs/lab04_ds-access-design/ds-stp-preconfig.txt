@@ -2,6 +2,10 @@
 en
 conf t
 !
+vtp domain GIT_NET
+vtp password cisco1234
+vtp mode client
+!
 spanning-tree vlan 1 priority 0
 !
 end
@@ -10,6 +14,10 @@ end
 	#DS-SW2
 en
 conf t
+!
+vtp domain GIT_NET
+vtp password cisco1234
+vtp mode client
 !
 spanning-tree vlan 1 priority 4096
 !
