@@ -1,0 +1,54 @@
+! ============================================
+! VLAN + Range Command Preconfig
+! ============================================
+! 조건:
+!  - VLAN 10 : Fa0/1 ~ Fa0/5
+!  - VLAN 20 : Fa0/6 ~ Fa0/10
+
+en
+conf t
+!
+vlan 10
+vlan 20
+!
+interface range fa0/1 - 5
+ switchport mode access
+ switchport access vlan 10
+!
+interface range fa0/6 - 10
+ switchport mode access
+ switchport access vlan 20
+!
+end
+!
+
+! ============================================
+! VLAN Name 지정
+! ============================================
+! 조건:
+!  - VLAN 11: CCNA / VLAN 12: CCNP
+!  - VLAN 13: LINUX-SERVER / VLAN 14: MS-SERVER
+!  - VLAN 15: AWS
+
+en
+conf t
+!
+vlan 11-15
+!
+vlan 11
+ name CCNA
+!
+vlan 12
+ name CCNP
+!
+vlan 13
+ name LINUX-SERVER
+!
+vlan 14
+ name MS-SERVER
+!
+vlan 15
+ name AWS
+!
+end
+!
