@@ -88,7 +88,7 @@ cisco-switch-l2study/
 | 도구 | 용도 |
 | --- | --- |
 | **GNS3** | 스위치 토폴로지 시뮬레이션 |
-| **Cisco IOU vL2** | L2 Switch 이미지 |
+| **Cisco IOUvL2** | L2 Switch 이미지 |
 | **Cisco Packet Tracer** | 보조 실습 환경 |
 | **MobaXterm** | 콘솔 접속 |
 | **Git / GitHub** | 버전 관리 |
