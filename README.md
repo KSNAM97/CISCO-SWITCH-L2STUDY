@@ -26,12 +26,23 @@ Hub / Switch / Router의 차이, 스위치의 동작 원리부터 VLAN, Trunk, V
 
 ## 🗂 디렉터리 구조
 
----
+```
+cisco-switch-l2study/
+├── 01_switch-basics/      # Hub vs Switch vs Router, 스위치 5대 동작
+├── 02_vlan/               # VLAN 개념, 생성/삭제, Range 명령어
+├── 03_trunk/              # Switchport Mode, 802.1Q Tagging, Router-on-a-Stick
+├── 04_vtp/                # VLAN Trunking Protocol (Server/Client/Transparent)
+├── 05_stp/                # Spanning-Tree (PVST+), Root Bridge, Port Role
+├── labs/                  # 종합 실습 (Preconfig 제공)
+│   ├── lab01_vtp-4switch/
+│   ├── lab02_stp-blockport/
+│   ├── lab03_pvst-loadbalance/
+│   └── lab04_ds-access-design/
+├── topology/              # 토폴로지 이미지
+├── LICENSE
+└── README.md
+```
 
-cisco-switch-l2study/ ├── 01_switch-basics/ # Hub vs Switch vs Router, 스위치 5대 동작 ├── 02_vlan/ # VLAN 개념, 생성/삭제, Range 명령어 ├── 03_trunk/ # Switchport Mode, 802.1Q Tagging, Router-on-a-Stick ├── 04_vtp/ # VLAN Trunking Protocol (Server/Client/Transparent) ├── 05_stp/ # Spanning-Tree (PVST+), Root Bridge, Port Role ├── labs/ # 종합 실습 (Preconfig 제공) │ ├── lab01_vtp-4switch/ │ ├── lab02_stp-blockport/ │ ├── lab03_pvst-loadbalance/ │ └── lab04_ds-access-design/ ├── topology/ # 토폴로지 이미지 ├── LICENSE └── README.md
-
-Copy
----
 
 ## 📚 이론 목차
 
