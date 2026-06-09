@@ -1,0 +1,23 @@
+! ============================================
+! DS-STP PRECONFIG (Distribution Switch)
+! DS-SW1 = VLAN 1 Root-Bridge (Primary)
+! DS-SW2 = VLAN 1 Backup Root-Bridge (Secondary)
+! ============================================
+
+! ---------- DS-SW1 ----------
+en
+conf t
+!
+spanning-tree vlan 1 priority 0
+!
+end
+!
+
+! ---------- DS-SW2 ----------
+en
+conf t
+!
+spanning-tree vlan 1 priority 4096
+!
+end
+!
