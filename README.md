@@ -37,8 +37,8 @@ cisco-switch-l2study/
 │   ├── lab01_vtp-4switch/
 │   ├── lab02_stp-blockport/
 │   ├── lab03_pvst-loadbalance/
-│   └── lab04_ds-access-design/
-├── topology/              # 토폴로지 이미지
+│   ├── lab04_ds-access-design/
+|   └── topology/              # 토폴로지 이미지
 ├── LICENSE
 └── README.md
 ```
