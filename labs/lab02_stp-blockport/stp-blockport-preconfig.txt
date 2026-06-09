@@ -1,0 +1,125 @@
+SW-BLOCKPROT PRECONFIG
+EX1) 아래의 조건에 맞게 SW1 , SW2에서 설정을 실시하시오 
+       .SW1 , SW2 에 VLAN 10,20,30,40을 생성하시오
+       .SW2은 VLAN을 생성할수 없으며 SW1으로부터 VLAN 정보를 동기화 한다.
+       .VTP Domain = GIT , VTP Password = cisco1234  
+
+
+
+	#SW1
+
+en
+conf t
+!
+no ip domain-lookup
+!
+line console 0
+ logging synchronous
+ exec-timeout 0 0
+ length 0
+ exit
+!
+line vty 0 4
+ logging synchronous
+ exec-timeout 0 0
+ length 0
+ exit
+!
+host SW1
+!
+vlan 10,20,30,40
+!
+int range gi3/2,gi3/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+exit
+!
+ vtp domain GIT
+ vtp password cisco1234
+ vtp mode server
+!
+end
+!
+wr
+!
+
+
+	#SW2
+
+en
+conf t
+!
+no ip domain-lookup
+!
+line console 0
+ logging synchronous
+ exec-timeout 0 0
+ length 0
+ exit
+!
+line vty 0 4
+ logging synchronous
+ exec-timeout 0 0
+ length 0
+ exit
+!
+host SW2
+!
+int range gi3/2,gi3/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+exit
+!
+ vtp domain GIT
+ vtp password cisco1234
+ vtp mode client
+!
+end
+!
+wr
+!
+
+
+EX2) SW2이 VLAN 10,20,30,40에 대해서  Root-bridge를 수행하며
+       VLAN 10,20은 gi3/2를 사용하여 통신을 해당 Port에 장애 발생시 gi3/3경로를 사용해야하며
+       VLAN 30,40은 gi3/3를 사용하여 통신을 해당 Port에 장애 발생시 gi3/2경로를 사용해야한다.
+  
+
+Root-bridge에서 설정하는 경우
+
+	#SW2
+en
+conf t
+!
+interface gi3/2
+ spanning-tree vlan 30,40 port-priority 192
+!
+interface gi3/3
+ spanning-tree vlan 10,20 port-priority 192
+!
+end
+!
+wr
+!
+
+
+non-Root에서 설정하는 경우
+
+	#SW1
+
+en
+conf t
+!
+interface gi3/2
+ spanning-tree vlan 30,40 cost 100
+!
+end
+!
+wr
+!
+
+
+
+
