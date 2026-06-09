@@ -1,6 +1,6 @@
 # Cisco Switch L2 Study
 
-![Cisco](https://img.shields.io/badge/Cisco-IOU-blue)
+![Cisco](https://img.shields.io/badge/Cisco-IOS-blue)
 ![Switch](https://img.shields.io/badge/Layer2-Switch-green)
 ![GNS3](https://img.shields.io/badge/Lab-GNS3-orange)
 ![License](https://img.shields.io/badge/License-MIT-yellow)
@@ -88,7 +88,7 @@ cisco-switch-l2study/
 | 도구 | 용도 |
 | --- | --- |
 | **GNS3** | 스위치 토폴로지 시뮬레이션 |
-| **Cisco IOUvL2** | L2 Switch 이미지 |
+| **Cisco IOU / IOSvL2** | L2 Switch 이미지 |
 | **Cisco Packet Tracer** | 보조 실습 환경 |
 | **MobaXterm** | 콘솔 접속 |
 | **Git / GitHub** | 버전 관리 |
