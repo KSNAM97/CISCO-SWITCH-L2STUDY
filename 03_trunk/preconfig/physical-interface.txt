@@ -1,0 +1,45 @@
+! ============================================
+! Physical Interface 방식 (VLAN별 별도 물리 포트)
+! ============================================
+
+! ---------- R1 ----------
+en
+conf t
+!
+!--- VLAN 10 게이트웨이 ---
+interface fa 0/0
+ ip address 192.168.10.254 255.255.255.0
+ no shutdown
+!
+!--- VLAN 20 게이트웨이 ---
+interface fa 0/1
+ ip address 192.168.20.254 255.255.255.0
+ no shutdown
+!
+!--- VLAN 30 게이트웨이 ---
+interface fa 1/0
+ ip address 192.168.30.254 255.255.255.0
+ no shutdown
+!
+end
+!
+
+
+! ---------- SW1 ----------
+en
+conf t
+!
+interface fa 0/22
+ switchport mode access
+ switchport access vlan 10
+!
+interface fa 0/23
+ switchport mode access
+ switchport access vlan 20
+!
+interface fa 0/24
+ switchport mode access
+ switchport access vlan 30
+!
+end
+!
