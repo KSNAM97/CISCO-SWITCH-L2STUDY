@@ -61,14 +61,14 @@ DTP Message를 사용한 Switch 간 자동 Trunk 협상.
 Ethernet Frame이 802.1Q Trunk Port로 전송될 때 **4Byte의 Header가 추가**됩니다.
 
 ### Access Mode Ethernet Header
-Copy
+ 
 | Destination MAC | Source MAC | Type | Data |
 
-Copy
+ 
 ### 802.1Q Trunk Mode Ethernet Header
 | Destination MAC | Source MAC | Tagging (4Byte) | Type | Data |
 
-Copy
+ 
 ### 4Byte Tag 구성 (32bit)
 
 | 필드 | bit | 설명 |
@@ -89,14 +89,14 @@ Copy
 #### SW1
 en conf t ! vlan 10 name CISCO-CCNA exit ! interface range fa 0/1-4 switchport mode access switchport access vlan 10 ! exit ! vlan 20 name CISCO-CCNP exit ! interface range fa 0/5-8 switchport mode access switchport access vlan 20 ! vlan 30 name CISCO-CCIE ! end
 
-Copy
+ 
 #### SW2 / SW3 도 동일한 방식으로 VLAN 10/20/30 구성.
 
 ### Trunk 설정
 
 en conf t ! interface fa 0/20 switchport trunk encapsulation dot1q switchport mode trunk ! end
 
-Copy
+ 
 > 일부 IOS는 `switchport trunk encapsulation`이 dot1q만 지원되므로 생략 가능.
 
 확인:
@@ -108,7 +108,7 @@ Port Vlans allowed on trunk Gi0/0 1-4094
 
 Port Vlans allowed and active in management domain Gi0/0 1,10,20
 
-Copy
+ 
 ---
 
 ## 5. `Allowed` Command
@@ -118,30 +118,30 @@ Copy
 
 interface gi0/0 switchport trunk encapsulation dot1q switchport mode trunk switchport trunk allowed vlan all ← Default
 
-Copy
+ 
 ### EX1) VLAN 1, 10, 20만 허용
 
 interface gi 0/0 switchport trunk encapsulation dot1q switchport mode trunk switchport trunk allowed vlan 1,10,20
 
-Copy
+ 
 ### EX2) VLAN 40 추가
 
 interface gi 0/0 switchport trunk allowed vlan add 40
 
-Copy
+ 
 ### EX3) VLAN 10 제거
 
 interface gi 0/0 switchport trunk allowed vlan remove 10
 
-Copy
+ 
 ### EX4) VLAN 100 제외한 모든 VLAN 허용
 
 interface gi 0/0 switchport trunk allowed vlan 1-99,101-4094
 
-Copy또는
+ 또는
 interface gi 0/0 switchport trunk allowed vlan except 100
 
-Copy
+ 
 ---
 
 ## 6. Router-on-a-Stick (Sub-Interface 방식)
@@ -173,12 +173,12 @@ M/M/1 큐 평균 지연: `W = 1 / (μ(1-ρ))`
 
 en conf t ! interface fa 0/0 no ip address no shutdown ! !--- VLAN 10 Sub-interface --- interface fa 0/0.10 encapsulation dot1q 10 ip address 192.168.10.254 255.255.255.0 ! !--- VLAN 20 Sub-interface --- interface fa 0/0.20 encapsulation dot1q 20 ip address 192.168.20.254 255.255.255.0 ! !--- VLAN 30 Sub-interface --- interface fa 0/0.30 encapsulation dot1q 30 ip address 192.168.30.254 255.255.255.0 ! end
 
-Copy
+ 
 ### 🔹 SW1 (Trunk 연결)
 
 en conf t ! interface fa 0/24 switchport trunk encapsulation dot1q switchport mode trunk ! end
 
-Copy
+ 
 ### 🔹 검증
 
 Router# show ip route C 192.168.10.0/24 is directly connected, FastEthernet0/0.10 C 192.168.20.0/24 is directly connected, FastEthernet0/0.20 C 192.168.30.0/24 is directly connected, FastEthernet0/0.30
@@ -189,7 +189,7 @@ SW1# show mac address-table Vlan Mac Address Type Ports
 
 10 0001.4209.9c52 DYNAMIC Fa0/2 10 0001.c9d3.cb01 DYNAMIC Fa0/24 ← Router Trunk 20 0001.c9d3.cb01 DYNAMIC Fa0/24 20 0002.179a.e75d DYNAMIC Fa0/6 30 0001.c9d3.cb01 DYNAMIC Fa0/24
 
-Copy
+ 
 > **IP를 다루는 장비**(Router) → **ARP Table**  
 > **프레임을 스위칭하는 장비**(Switch) → **MAC Table**  
 > **둘 다 하는 장비**(L3 Switch) → 두 테이블 모두 보유
@@ -204,12 +204,12 @@ Copy
 
 en conf t ! interface fa 0/0 ip address 192.168.10.254 255.255.255.0 no shutdown ! interface fa 0/1 ip address 192.168.20.254 255.255.255.0 no shutdown ! interface fa 1/0 ip address 192.168.30.254 255.255.255.0 no shutdown ! end
 
-Copy
+ 
 ### SW1 (Access로 라우터 연결)
 
 en conf t ! interface fa 0/22 switchport mode access switchport access vlan 10 ! interface fa 0/23 switchport mode access switchport access vlan 20 ! interface fa 0/24 switchport mode access switchport access vlan 30 ! end
 
-Copy
+ 
 ---
 
 ## 8. 핵심 명령어 정리
