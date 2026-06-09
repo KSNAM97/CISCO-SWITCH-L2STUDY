@@ -80,11 +80,11 @@ Switch 간 연결 시 상호 송수신하는 STP 메시지.
 
 ### 🔹 Topology 1 (단일 링크)
 
-Copy
-Copy    Fa0/20 [DP]              Fa0/20 [RP]
+ 
+     Fa0/20 [DP]              Fa0/20 [RP]
 SW1 ════════════════════════════ SW2 Fa0/21 [DP] Fa0/21 [AP] 32768 32768 1111.1111.1111 2222.2222.2222
 
-Copy
+ 
 - SW1: MAC이 더 낮음 → **Root Bridge**
 - SW1 모든 포트: DP
 - SW2: 한 포트는 RP(최단), 다른 포트는 AP
@@ -97,7 +97,7 @@ VLAN0001 Spanning tree enabled protocol ieee Root ID Priority 32769 Address 0c4c
 
 Interface Role Sts Cost Prio.Nbr Type Gi0/0 Desg FWD 4 128.1 P2p ← DP Gi0/1 Desg FWD 4 128.2 P2p ← DP ...
 
-Copy
+ 
 #### Non-Root (SW2) 확인
 
 SW2# show spanning-tree
@@ -106,16 +106,16 @@ VLAN0001 Root ID Priority 32769 Address 0c4c.9ffd.0000 Cost 4 Port 1 (GigabitEth
 
 Interface Role Sts Cost Prio.Nbr Type Gi0/0 Root FWD 4 128.1 P2p ← RP Gi0/1 Altn BLK 4 128.2 P2p ← AP
 
-Copy
+ 
 ### 🔹 Topology 2 (삼각형 - 3 SW)
 
-Copy    SW1 (Root)
+     SW1 (Root)
    /          \
  DP            DP
 /                \
 SW2 ────────────── SW3 AP ← Block 발생
 
-Copy
+ 
 - SW2와 SW3은 각각 Root로 향하는 RP를 가지며,
 - SW2-SW3 사이 링크에서는 Bridge-ID가 큰 쪽이 **AP(Block)**.
 
@@ -123,7 +123,7 @@ Copy
 
 SW1(Root) ── Gi(1G, Cost 4) ── SW3 │ └── Et(10M, Cost 100) ── SW2 ── SW3 (Et)
 
-Copy
+ 
 - SW2는 SW1까지 **Ethernet(Cost 100)** → 비싼 경로
 - SW3은 SW1까지 **Gi(Cost 4)** → 빠른 경로
 - 누적 Cost가 큰 쪽 Port가 Block
@@ -139,7 +139,7 @@ Copy
 
 SW2(config)# vlan 10,20,30,40 ! SW2(config)# interface range fa 0/23 - 24 SW2(config-if)# switchport trunk encapsulation dot1q SW2(config-if)# switchport mode trunk ! SW2(config)# spanning-tree vlan 10,20,30,40 priority 4096
 
-Copy
+ 
 확인: `show spanning-tree vlan 10`에서 `This bridge is the root` 출력.
 
 ---
@@ -152,10 +152,10 @@ Copy
 
 ### 토폴로지
 
-Copy         <VLAN 10,20,30,40>
+          <VLAN 10,20,30,40>
 gi3/2 gi3/2 SW1 ═══════════════════════════════════ SW2 gi3/3 gi3/3 32768 32768 1111.1111.1111 2222.2222.2222
 
-Copy
+ 
 ### EX1) Root에서 Port-Priority로 경로 분리
 
 > SW1이 Root.  
@@ -168,12 +168,12 @@ Copy
 
 SW1(config)# interface gi3/2 SW1(config-if)# spanning-tree vlan 10,20 port-priority 64 ! SW1(config)# interface gi3/3 SW1(config-if)# spanning-tree vlan 30,40 port-priority 64
 
-Copy
+ 
 방법 ②: 사용하지 않을 포트의 Priority를 **높인다**
 
 SW1(config)# interface gi3/2 SW1(config-if)# spanning-tree vlan 30,40 port-priority 192 ! SW1(config)# interface gi3/3 SW1(config-if)# spanning-tree vlan 10,20 port-priority 192
 
-Copy
+ 
 > `port-priority`는 **16의 배수** (0, 16, 32, ..., 128(기본), ..., 240).
 
 ---
