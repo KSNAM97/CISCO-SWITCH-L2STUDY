@@ -65,8 +65,8 @@ cisco-switch-l2study/
 | Lab 03 | [PVST+ Root 분산 (3 SW Triangle)](./labs/lab03_pvst-loadbalance/README.md) | VLAN별 Root / Backup Root 구성 |
 | Lab 04 | [DS-Access 2-Tier 설계](./labs/lab04_ds-access-design/README.md) | Distribution Switch 이중화 + Root/Backup Root |
 
- 각 실습 폴더에 `tolpology` 이미지 존재
- 각 실습 폴더의 `preconfig/*.txt`를 바로 복사해서 GNS3 콘솔에 붙여넣어 사용
+ 각 실습 폴더에 `tolpology` 이미지 존재.
+ 각 실습 폴더의 `preconfig/*.txt`를 바로 복사해서 GNS3 콘솔에 붙여넣어 사용.
 
 ---
 
