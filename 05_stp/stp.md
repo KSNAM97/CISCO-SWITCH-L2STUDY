@@ -96,8 +96,9 @@ Switch 간 연결 시 상호 송수신하는 STP 메시지.
 
 **Root Bridge (SW1) 확인**
 
-> 💡 PVST+에서 실제 Bridge Priority = `설정값 + VLAN ID`
+> 💡 PVST+에서 실제 Bridge Priority = `설정값 +  VLAN ID` 
 > (예: 기본값 32768 + VLAN 1 = 32769)
+> 
 
 ```cisco
 SW1# show spanning-tree
