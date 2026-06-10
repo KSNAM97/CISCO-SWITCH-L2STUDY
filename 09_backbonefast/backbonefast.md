@@ -73,3 +73,5 @@ STP: VLAN0001 Fa0/20 -> forwarding
 | **PortFast** | Edge Port (PC/Server) | 단말 연결 포트 | 즉시 Forwarding (STP 미동작) |
 | **UplinkFast** | Block Port 가진 Switch | **직접 연결(RP) 장애** | Block → 즉시 Forwarding |
 | **BackboneFast** | 모든 Switch | **간접(Backbone) 장애** | Max-age 20초 생략 (50→30초) |
+
+⬅ 이전: [08. UplinkFast](../08_uplinkfast/uplinkfast.md) | ➡ 다음: [10. RSTP](../10_rstp/rstp.md)
