@@ -334,4 +334,5 @@ show spanning-tree summary
 
 ---
 
-🏁 모든 학습 완료. [메인으로](../README.md)
+➡ 다음: [06. STP Port 상태](../06_stp-port-states/stp-port-states.md)
+
