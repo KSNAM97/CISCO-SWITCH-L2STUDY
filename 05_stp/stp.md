@@ -334,5 +334,6 @@ show spanning-tree summary
 
 ---
 
-➡ 다음: [06. STP Port 상태](../06_stp-port-states/stp-port-states.md)
+⬅ 이전: [04. VTP](../04_vtp/vtp.md) | ➡ 다음: [06. STP Port 상태](../06_stp-port-states/stp-port-states.md)
+
 
