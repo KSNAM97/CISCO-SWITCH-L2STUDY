@@ -133,4 +133,8 @@ cisco-switch-l2study/
 
 [MIT License](./LICENSE)
 
+<div align="center">
+
 작성자: [KSNAM97](https://github.com/KSNAM97)
+
+</div>
