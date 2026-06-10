@@ -101,3 +101,4 @@ errdisable recovery interval 300
 %LINK-3-UPDOWN: Interface Gi0/1, changed state to up
 %LINEPROTO-5-UPDOWN: Line protocol on Interface Gi0/1, changed state to up
 ```
+⬅ 이전: [06. STP Port 상태](../06_stp-port-states/stp-port-states.md) | ➡ 다음: [08. UplinkFast](../08_uplinkfast/uplinkfast.md)
