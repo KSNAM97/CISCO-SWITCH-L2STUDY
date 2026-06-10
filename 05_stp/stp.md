@@ -234,6 +234,81 @@ SW1(config-if)# spanning-tree vlan 10,20 port-priority 192
 
 ---
 
+### EX2) Non-Root에서 Cost로 경로 분리
+
+> SW1이 Root, SW2가 Non-Root.
+> - VLAN 10 / 20 → `gi3/2` 사용, 장애 시 `gi3/3` 사용
+> - VLAN 30 / 40 → `gi3/3` 사용, 장애 시 `gi3/2` 사용
+
+**Cost가 낮은 쪽이 선호** → Root Path Cost가 큰 포트가 Block.
+
+**방법 ①**: 사용하지 않을 포트의 Cost를 **높인다** (권장)
+
+```cisco
+SW2(config)# interface gi3/2
+SW2(config-if)# spanning-tree vlan 30,40 cost 100
+!
+SW2(config)# interface gi3/3
+SW2(config-if)# spanning-tree vlan 10,20 cost 100
+```
+
+**방법 ②**: 사용하고자 하는 포트의 Cost를 **낮춘다**
+
+```cisco
+SW2(config)# interface gi3/2
+SW2(config-if)# spanning-tree vlan 10,20 cost 1
+!
+SW2(config)# interface gi3/3
+SW2(config-if)# spanning-tree vlan 30,40 cost 1
+```
+
+> **기본 Cost (IEEE 802.1D-2004, Long 기준)**
+> - 10 Mbps → 2,000,000
+> - 100 Mbps → 200,000
+> - 1 Gbps → 20,000
+> - 10 Gbps → 2,000
+> - 100 Gbps → 200
+>
+> Short(구버전) 기준: 10M=100, 100M=19, 1G=4, 10G=2
+
+---
+
+### 검증 명령어
+
+```cisco
+! VLAN별 STP 상태 확인
+show spanning-tree vlan 10
+show spanning-tree vlan 30
+
+! 인터페이스별 상세 정보 (Cost, Port-Priority, Role, State)
+show spanning-tree interface gi3/2 detail
+
+! 요약 (Root Port / Designated / Blocking)
+show spanning-tree summary
+```
+
+출력에서 확인 포인트:
+
+- `Role` : Root / Desg / Altn(Block)
+- `Cost` : Root Path Cost
+- `Prio.Nbr` : Port Priority + Port Number (예: `128.130`)
+
+---
+
+### 정리: 어느 방법을 언제 쓰나?
+
+| 상황 | 권장 설정 위치 | 사용 파라미터 |
+|---|---|---|
+| Root에서 일괄 관리하고 싶을 때 | Root Switch | `port-priority` |
+| Block Port를 가진 쪽에서 직접 제어 | Non-Root Switch | `cost` |
+| Non-Root에서 port-priority 사용 | (효과 제한적, 비권장) | Local Port ID (4순위)에만 영향 |
+
+> 💡 **실무 팁**
+> - 일반적으로 **Cost 조정이 더 직관적**이고 영향 범위가 명확합니다 (RPC 1순위).
+> - **Port-Priority**는 동일 Cost 경로가 여러 개일 때 미세 조정용으로 많이 씁니다.
+> - 설정 전후로 `show spanning-tree`로 **Root Port / Blocking Port가 의도대로 바뀌었는지** 반드시 확인하세요.
+
+
 ## 8. 핵심 명령어 정리
 
 | 명령어                                          | 설명                                       |
