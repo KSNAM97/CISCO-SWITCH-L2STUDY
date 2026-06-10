@@ -49,3 +49,6 @@ STP: VLAN0001 new root port Fa0/20, cost 3038
 
 > 💡 UplinkFast 설정 시 Cost에 큰 값(+3000)이 더해진다 (`cost 38` → `cost 3038`).
 > 이는 해당 Switch가 다른 Switch의 전송 경로로 선택되지 않도록(Root가 되지 않도록) 하기 위함이다.
+>
+> ⬅ 이전: [07. PortFast](../07_portfast/portfast.md) | ➡ 다음: [09. BackboneFast](../09_backbonefast/backbonefast.md)
+
