@@ -276,4 +276,4 @@ VLAN  Name        Status   Ports
 
 ---
 
-➡ 다음: [03. Trunk](../03_trunk/trunk.md)
+⬅ 이전: [01. Switch 기본](../01_switch-basics/switch-basics.md) | ➡ 다음: [03. Trunk](../03_trunk/trunk.md)
