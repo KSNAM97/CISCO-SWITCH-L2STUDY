@@ -106,3 +106,4 @@ RSTP(1): synced Fa0/24
 RSTP(1): Fa0/20 is now alternate
 RSTP(1): transmitting an agreement on Fa0/24 as a response to a proposal
 ```
+⬅ 이전: [09. BackboneFast](../09_backbonefast/backbonefast.md) | ➡ 다음: [11. MSTP](../11_mstp/mstp.md)
