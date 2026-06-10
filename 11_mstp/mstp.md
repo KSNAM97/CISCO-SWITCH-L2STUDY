@@ -176,3 +176,5 @@ Fa0/22  Altn BLK 200000 128.24   P2p       ← Block
 
 > 💡 Instance Priority도 **4096의 배수**를 사용하며, 출력 Priority는 `설정값 + sysid(Instance 번호)`로 표시된다.
 > (예: `4096 + 1 = 4097`)
+
+🏁 모든 학습 완료. [메인으로](../README.md)
