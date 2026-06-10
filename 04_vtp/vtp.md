@@ -154,4 +154,4 @@ Setting device to VTP TRANSPARENT mode.
 
 ---
 
-➡ 다음: [05. STP](../05_stp/stp.md)
+⬅ 이전: [03. Trunk](../03_trunk/trunk.md) | ➡ 다음: [05. STP](../05_stp/stp.md)
