@@ -126,3 +126,4 @@ STP: VLAN0001 Gi0/1 -> forwarding
 STP: VLAN0001 sent Topology Change Notice on Gi0/0
 STP: VLAN0001 Gi0/2 -> blocking
 ```
+⬅ 이전: [05. STP](../05_stp/stp.md) | ➡ 다음: [07. PortFast](../07_portfast/portfast.md)
