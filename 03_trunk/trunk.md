@@ -375,4 +375,5 @@ end
 
 ---
 
-➡ 다음: [04. VTP](../04_vtp/vtp.md)
+⬅ 이전: [02. VLAN](../02_vlan/vlan.md) | ➡ 다음: [04. VTP](../04_vtp/vtp.md)
+
