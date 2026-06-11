@@ -208,7 +208,7 @@ interface gi 0/0
 
 ---
 
-## 6. Router-on-a-Stick (Sub-Interface 방식)
+## 6. Sub-Interface 방식 (Router-on-a-Stick)
 
 > 하나의 물리 인터페이스를 **논리적인 Sub-interface**로 나누어
 > 각 VLAN의 Gateway 역할을 수행하게 하는 방식.
