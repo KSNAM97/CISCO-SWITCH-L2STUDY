@@ -90,10 +90,13 @@ interface gi0/0
 ```
 
 **③ 자동 복구 설정 (errdisable recovery)**
+errdisable recovery interval <seconds> — 복구를 시도하기까지의 대기 시간을 설정
+설정 가능한 범위는 보통 30 ~ 86400초이며, 명시하지 않으면 300초가 기본값
 
 ```cisco
 errdisable recovery cause bpduguard
 errdisable recovery interval 300
+show errdisable recovery
 ```
 
 ```text
