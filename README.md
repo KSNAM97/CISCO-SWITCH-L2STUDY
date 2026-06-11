@@ -89,9 +89,7 @@ cisco-switch-l2study/
 | Lab 02 | [STP Block Port (2 SW)](./labs/lab02_stp-blockport) | VLAN별 변경 (Port-Priority / Cost) |
 | Lab 03 | [PVST+ Root (3 SW Triangle)](./labs/lab03_pvst-loadbalance) | VLAN별 Root / Backup Root |
 | Lab 04 | [DS-Access 2-Tier](./labs/lab04_ds-access-design) | Distribution Switch + Root/Backup Root |
-| Lab 05 | [PortFast + BPDU Guard](./labs/lab05_portfast-bpduguard) | Edge Port 보호, Err-disable & 복구 |
-| Lab 06 | [RSTP 수렴](./labs/lab06_rstp-convergence) | Rapid-PVST 수렴, Proposal/Agreement |
-| Lab 07 | [MSTP Instance](./labs/lab07_mstp-instance) | MST Region 구성, Instance Root/Backup |
+
 
 각 실습 디렉터리에는 `topology` 와 `preconfig/*.txt` 가 포함되어 GNS3 에서 바로 로드할 수 있다.
 
