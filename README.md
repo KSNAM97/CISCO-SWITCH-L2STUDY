@@ -5,11 +5,12 @@
 [![GNS3](https://img.shields.io/badge/GNS3-Lab-green?style=flat)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)]()
 
-> - **Part 1 · Layer 2** ← 현재 문서
-> - [Part 2 · Layer 3](https://github.com/KSNAM97/Cisco-Switch-L3-Study)
 
 
 **Cisco Layer 2 Switch (VLAN / Trunk / VTP / STP / RSTP / MSTP / SPAN / Storm-control / Port-security)**
+
+> - **Part 1 · Layer 2** ← 현재 문서
+> - [Part 2 · Layer 3](https://github.com/KSNAM97/Cisco-Switch-L3-Study)
 
 ---
 
