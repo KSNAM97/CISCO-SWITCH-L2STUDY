@@ -1,11 +1,13 @@
 # 📚 Cisco Layer 2 Switch Study
-> - **Part 1 · Layer 2** ← 현재 문서
-> - [Part 2 · Layer 3](https://github.com/KSNAM97/Cisco-Switch-L3-Study)
 
 [![Cisco](https://img.shields.io/badge/Cisco-1BA0D7?style=flat&logo=cisco&logoColor=white)]()
 [![Switch](https://img.shields.io/badge/Switch-L2-blue?style=flat)]()
 [![GNS3](https://img.shields.io/badge/GNS3-Lab-green?style=flat)]()
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)]()
+
+> - **Part 1 · Layer 2** ← 현재 문서
+> - [Part 2 · Layer 3](https://github.com/KSNAM97/Cisco-Switch-L3-Study)
+
 
 **Cisco Layer 2 Switch (VLAN / Trunk / VTP / STP / RSTP / MSTP / SPAN / Storm-control / Port-security)**
 
